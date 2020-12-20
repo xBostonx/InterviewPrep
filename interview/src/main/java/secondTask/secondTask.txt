@@ -1,0 +1,69 @@
+
+
+interface Moveable {
+    void move();
+}
+
+interface Stopable {
+    void stop();
+}
+
+public abstract class Car implements Moveable, Stopable{
+    private Engine engine;
+    private String color;
+    private String name;
+    
+    
+    public void start() {
+        System.out.println("Car starting");
+    }
+    
+    abstract void open();
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Car is moving");
+    }
+
+    @Override
+    public void stop(){
+    System.out.println("Car is stop");
+    }
+}
+
+public abstract class LightWeightCar extends Car {
+	@Override
+	public void open() {
+       System.out.println("Car is open");
+    }
+}
+
+public class Lorry extends LightWeightCar {
+	public Lorry() {
+		
+	}
+}
